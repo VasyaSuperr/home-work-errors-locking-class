@@ -70,10 +70,11 @@ function validateEmail(email) {
 
   let fl = 0;
   for (let i = 0; i < email.length; i++) {
-    if (email.indexOf("@") != -1) {
+    if (email[i] === "@") {
       fl++;
     }
   }
+  console.log(fl);
   if (fl > 1) {
     throw new Error(
       "Символ '@' не може використовуватись більше одного разу !!!"
@@ -84,7 +85,7 @@ function validateEmail(email) {
 }
 
 try {
-  console.log(`Результат: ${validateEmail("vasya200@gmail.com")}`);
+  console.log(`Результат: ${validateEmail("vasya2004@gmail.com")}`);
 } catch (error) {
   if (error instanceof TypeError) {
     console.error(`Помилка типу: ${error.message}`);
