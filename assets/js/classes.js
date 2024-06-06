@@ -145,12 +145,12 @@ class Post {
 
 const post1 = new Post(
   1,
-  "neural network",
+  "First Post",
   "Vasya",
-  "The program that Vasya wrote",
+  "This is the first post.",
   new Date(),
   157,
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSbqbzaUyp-PvyvN4a1Evzm0B9ORyNmnCPHIUWHuaahzbOPiwfwP7q6GKu4SoxQRQrKbs&usqp=CAU",
+  "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5f4bd7a6-f763-4518-9b81-bdfd40ce3fc9/d27o815-7aeda6bb-34bd-4dcd-ada6-c6e27fbade16.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzVmNGJkN2E2LWY3NjMtNDUxOC05YjgxLWJkZmQ0MGNlM2ZjOVwvZDI3bzgxNS03YWVkYTZiYi0zNGJkLTRkY2QtYWRhNi1jNmUyN2ZiYWRlMTYucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.lavjAxx0egYbhZ7Bdzb2aWtfcAp5dPYotjktC0bLF0M",
   ["web", "javascript", "fullstack"]
 );
 
@@ -161,7 +161,6 @@ post1.changeLikes("-", 20);
 post1.increaseLikes();
 post1.increaseLikes();
 post1.decreaseLikes();
-post1.render();
 
 try {
   post1.likes = 45;
@@ -174,8 +173,6 @@ try {
     console.error(`Інша помилка: ${error.message}`);
   }
 }
-
-post1.render();
 const postLikes = post1.likes;
 console.log(postLikes);
 
@@ -186,3 +183,28 @@ try {
 }
 
 post1.removeHashtag("coding");
+
+const post2 = new Post(
+  2,
+  "Second Post",
+  "Alice",
+  "Another post here.",
+  new Date(),
+  15,
+  "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5f4bd7a6-f763-4518-9b81-bdfd40ce3fc9/d26yer1-421bb5b8-9fc2-4d5a-b2d1-1e1f81b26b82.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzVmNGJkN2E2LWY3NjMtNDUxOC05YjgxLWJkZmQ0MGNlM2ZjOVwvZDI2eWVyMS00MjFiYjViOC05ZmMyLTRkNWEtYjJkMS0xZTFmODFiMjZiODIucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.p5vfqGmq9kIylfG3glHGa20CAPUtoWlAxKEGpIvGOi8",
+  ["fullstack", "education", "technology"]
+);
+
+const post3 = new Post(
+  3,
+  "Third Post",
+  "Bob",
+  "Yet another post.",
+  new Date(),
+  20,
+  "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5f4bd7a6-f763-4518-9b81-bdfd40ce3fc9/d26yedh-7321e3e3-0846-4b77-b418-a30348f982f3.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzVmNGJkN2E2LWY3NjMtNDUxOC05YjgxLWJkZmQ0MGNlM2ZjOVwvZDI2eWVkaC03MzIxZTNlMy0wODQ2LTRiNzctYjQxOC1hMzAzNDhmOTgyZjMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.nvmUh7ZUbQgHUITE1Dhs97KzGb_gD2BjLiOiq73oMLY",
+  ["python", "java", "css"]
+);
+
+const posts = [post1, post2, post3];
+posts.forEach((post) => post.render());
